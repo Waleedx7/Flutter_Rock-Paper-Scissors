@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   );
   String result = '';
   String playerOne = 'scissors';
-  String plyerTwo = 'paper';
+  String playerTwo = 'paper';
 
   void play() {
     List<String> signs = ['rock', 'paper', 'scissors'];
@@ -22,16 +22,16 @@ class _HomePageState extends State<HomePage> {
     int playerTwoNum = Random().nextInt(3);
     setState(() {
       playerOne = signs[playerOneNum];
-      playerTwoNum = signs[playerTwoNum] as int;
+      playerTwo = signs[playerTwoNum];
     });
 
-    if (playerOne == 'rock' && plyerTwo == 'scissors') {
+    if (playerOne == 'rock' && playerTwo == 'scissors') {
       result = 'Player 1 Wins!';
-    } else if (playerOne == 'scissors' && plyerTwo == 'paper') {
+    } else if (playerOne == 'scissors' && playerTwo == 'paper') {
       result = 'Player 1 Wins';
-    } else if (playerOne == 'paper' && plyerTwo == "rock") {
+    } else if (playerOne == 'paper' && playerTwo == "rock") {
       result = 'Player 1 Wins!';
-    } else if (playerOne == plyerTwo) {
+    } else if (playerOne == playerTwo) {
       result = 'TIE';
     } else {
       result = 'Player two wins';
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
             Column(
               children: [
                 Image.asset(
-                  "assests/images/$plyerTwo.png",
+                  "assests/images/$playerTwo.png",
                   width: 150,
                 ),
                 spacing,
